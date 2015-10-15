@@ -1,0 +1,23 @@
+function [ output_args ] = get_brick_positions( input_args )
+%% %%%%%%%%%%%%%%%%%%%%%%%% get_brick_positions %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% fonction : Function that will get all the bricks positions (the center of
+% the bricks) given the dimensions of the picture and the dimensions of the
+% bricks.
+%
+% %%%%%% usage %%%%%%
+% %% INPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  - pos        : position of the center of the brick on the picture
+%  - L          : Length of the brick
+%  - h          : Height of the brick
+%  - r          : Radius of the corners of the brick
+%  - image      : Original image
+%
+% %% OUTPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  - image_out  : Image with the brick added on it
+%
+%
+% %% AUTEUR : Martin HOFMANN
+
+end
+
