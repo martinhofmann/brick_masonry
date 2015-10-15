@@ -1,6 +1,6 @@
 %% Masonry parameters
 % Length of the bricks in meters
-L=0.25;
+L=0.08;
 % Height of the bricks in meters
 h=0.08;
 % Thickness of the mortar in meters

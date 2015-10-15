@@ -82,22 +82,22 @@ end
 
 % Right lower corner
 
-if X4c<=size(image,1) && Y4c<size(image,2)
+if X4c<=size(image,1) && X3c<=size(image,1) && Y3c<size(image,2) && Y4c<size(image,2)
     image([X3c:X4c],[Y3c:Y4c])=round_in_square;
 end
 % Left lower corner
 round_in_square=flipud(round_in_square);
-if X1c>0 && Y4c<size(image,2)
+if X1c>0 && X2c>0 && Y3c<size(image,2) && Y4c<size(image,2)
     image([X1c:X2c],[Y3c:Y4c])=round_in_square;
 end
 % Left upper corner
 round_in_square=fliplr(round_in_square);
-if X1c>0 && Y1c>0
+if X1c>0 && Y1c>0 && 
     image([X1c:X2c],[Y1c:Y2c])=round_in_square;
 end
 % Right upper corner
 round_in_square=flipud(round_in_square);
-if X4c<=size(image,1) && Y1c>0
+if X4c<=size(image,1) && Y1c>0 && 
     image([X3c:X4c],[Y1c:Y2c])=round_in_square;
 end
 image_out=image;
