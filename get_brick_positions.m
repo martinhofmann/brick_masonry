@@ -7,8 +7,8 @@ function [ X,Y,n_bricks ] = get_brick_positions( dim_image_X, dim_image_Y, L, h,
 %
 % %%%%%% usage %%%%%%
 % %% INPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  - dim_image_X  : Horizontal dimension of the picture (in m)
-%  - dim_image_Y  : Vertical dimension of the picture (in m)
+%  - dim_image_X  : Vertical dimension of the picture (in m)
+%  - dim_image_Y  : Horizontal dimension of the picture (in m)
 %  - L            : Length of the bricks
 %  - h            : Heigth of the bricks
 %  - e            : Thickness of the mortar
@@ -21,16 +21,24 @@ function [ X,Y,n_bricks ] = get_brick_positions( dim_image_X, dim_image_Y, L, h,
 % %% AUTEUR : Martin HOFMANN
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Computation of the X coordinates
+% Computation of the X coordinates
+
 % uneven rows : the first brick has its center in X = 0 (half of it is out
 % of the picture)
+
 X(1)=0;
+
 % The number of bricks on an uneven row is determined by the following formula 
+
 n_bricks_y_uneven=floor((dim_image_Y+L/2)/(L+e)+1);
+
 % The number of bricks on an even row is determined by the following
 % formula
+
 n_bricks_y_even=floor((dim_image_Y+L/2)/(L+e)+1/2);
+
 % The number of rows is determined by the following formula :
+
 n_rows=floor(dim_image_X/(h+e)+1);
 
 k=1;

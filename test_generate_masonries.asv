@@ -1,0 +1,10 @@
+clear all;
+close all;
+clc;
+
+
+
+
+for L=0.15:0.05:0.35
+
+masonry_picture=draw_masonry(length_pic,height_pic,L,h,e,r,pix_size);

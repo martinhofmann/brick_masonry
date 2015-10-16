@@ -19,6 +19,7 @@ function [ pic_out ] = create_picture( X,Y,pix_size )
 
 M=round(X/pix_size*1e3);
 N=round(Y/pix_size*1e3);
-pic_out=ones(M,N);
+pic_out=ones(M,N); % Assigning ones gives a white picture
+
 end
 

@@ -1,22 +1,57 @@
 function [ picture_out ] = place_brick( brick_image,posX,posY,L,h,picture_in,pix_size )
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%% place_brick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% fonction : Function that will place the brick in the correct place on the
+% picture, according to its coordinates and its image. It will also cut the
+% parts that can be outside of the picture
+%
+% %%%%%% usage %%%%%%
+% %% INPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  - brick_image  : A matrix containing the image of the brick
+%  - pos_X        : The X coordinate of the center of the brick (m)
+%  - pos_Y        : The Y coordinate of the center of the brick (m)
+%  - L            : The length of the brick (m)
+%  - h            : The heigth of the brick (m)
+%  - picture_in   : The input picture, on which the function will place the
+%                   brick
+%  - pix_size     : The pixel size in mm
+%
+% %% OUTPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  - picture_out  : The picture with the brick added on it.
+%
+% %% AUTEUR : Martin HOFMANN
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Getting the dimensions of the brick picture
 
 length=size(brick_image,1);
 heigth=size(brick_image,2);
 
-dx=round(length/2);
-dy=round(heigth/2);
+% Computing the coordinates of the center on the picture
 
-posXc=posX/pix_size*1e3;
-posYc=posY/pix_size*1e3;
+posXc=posX/pix_size*1e3+1;
+posYc=posY/pix_size*1e3+1;
 
-x1c=posXc-dx;
-y1c=posYc-dy;
+% Computing the coordinates of the corners of the brick picture in meters
 
-x2c=posXc+dx;
-y2c=posYc+dy;
+x1=posX-h/2;
+x2=posX+h/2;
+y1=posY-L/2;
+y2=posY+L/2;
 
-figure;
-imshow(brick_image);
+% Computing the coordinates of the corners of the brick pictures on the
+% global picture
+
+x1c=round(x1/pix_size*1e3)+1;
+y1c=round(y1/pix_size*1e3)+1;
+
+x2c=round(x2/pix_size*1e3)+1;
+y2c=round(y2/pix_size*1e3)+1;
+
+% These variables represent the number of pixels that will be cutted on the
+% brick picture on each side if necessary and are initialized at 0. tcx1 is
+% the upper part that could be cutted, tcy1 is the left part, tcx2 the
+% lower part and tcy2 the right part.
 
 tcx1=0;
 tcy1=0;
@@ -64,8 +99,6 @@ if tcy2~=0
     y2c=size(picture_in,2);
 end
 
-figure;
-imshow(brick_image);
 
 picture_out=picture_in;
 picture_out(x1c:x2c,y1c:y2c)=brick_image;
