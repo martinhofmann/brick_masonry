@@ -23,8 +23,9 @@ function [ masonry_pic ] = draw_masonry( void_picture,L,h,e,r,pix_size )
 
 [X_pos,Y_pos,n_bricks]=get_brick_positions(size(void_picture,1)/pix_size/1e3,size(void_picture,2)/pix_size/1e3,L,h,e);
 masonry_pic=void_picture;
+image_brick=draw_brick(L,h,r,pix_size);
+
 for k=1:n_bricks
-    masonry_pic=draw_brick(X_pos(k),Y_pos(k),L,h,r,masonry_pic,pix_size);
-    n_bricks
+    masonry_pic=place_brick(image_brick,X_pos(k),Y_pos(k),L,h,masonry_pic,pix_size);
 end
 
