@@ -39,6 +39,6 @@ image_brick=draw_brick(L,h,r,pix_size);
 % For each brick, we place it with the mason function place_brick
 
 for k=1:n_bricks
-    masonry_pic=place_brick(image_brick,X_pos(k),Y_pos(k),L,h,masonry_pic,pix_size);
+    masonry_pic=place_brick(image_brick,X_pos(k),Y_pos(k),masonry_pic,pix_size);
 end
 

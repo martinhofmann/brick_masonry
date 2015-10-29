@@ -13,8 +13,8 @@ toc;
 
 % masonry_picture(:,1)=[];
 imshow(masonry_picture);
-hold on;
-% [interlocking_astar, Optimal_path]=get_interlocking_astar(masonry_picture);
+% hold on;
+% [interlocking_astar, Optimal_path]=get_interlocking_astar(masonry_picture,treshold);
 % interlocking_formula=get_interlocking_formula(r,h,L,e);
-
+imwrite(masonry_picture,'testjpg.jpg');
 

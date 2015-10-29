@@ -42,23 +42,23 @@ count_row=1; % Row counter
 
 posX=1; % Initialization of X position
 
-while posX <= size_image(1)
+while posX <= size_image(1) % While we do not go over the X coordinate
     
-    if mod(count_row,2) == 1
-        posY=firstYuneven;
-    else
-        posY=firstYeven;
+    if mod(count_row,2) == 1 % If the row is uneven ...
+        posY=firstYuneven; % The first brick is half out of the picture
+    else % If the row is even...
+        posY=firstYeven; % The first brick is aligned with the frame of the picture
     end
     
-    while posY<=size_image(2)
+    while posY<=size_image(2) % While we do not go over the Y coordinate
         X(k)=posX;
         Y(k)=posY;
-        posY=posY+dy_brick+d_mortar
-        k=k+1;
+        posY=posY+dy_brick+d_mortar % Increment on the Y position
+        k=k+1; % Brick counter
     end
     
-    count_row=count_row+1;
-    posX=posX+dx_brick+d_mortar;
+    count_row=count_row+1; % Row counter
+    posX=posX+dx_brick+d_mortar; % Increment on the X position
 
 end
 n_bricks=k-1;

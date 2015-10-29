@@ -47,14 +47,12 @@ end
 
 % If the brick is too right
 if y2>size(picture_in,2)
-    brick_image(:,size(brick_image,2)-y2+size(picture_in,2)+1:end)=[]; % We cut the right part of the brick
-    y2=size(picture_in,2); % We re-asign the left coordinate with the end of the global picture
+    brick_image(:,size(brick_image,2)-y2+size(picture_in,2)+1:end)=[]; % We cut the right part of t
+    y2=size(picture_in,2);
 end
 
-% We put the brick picture on the picture given as an input
 picture_in(x1:x2,y1:y2)=brick_image;
 
-% The output is assigned
 picture_out=picture_in;
 
 end
