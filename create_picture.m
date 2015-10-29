@@ -1,4 +1,4 @@
-function [ pic_out ] = create_picture( X,Y,pix_size )
+function [ pic_out ] = create_picture(length,heigth,pix_size )
 %% %%%%%%%%%%%%%%%%%%%%%%%%%% create_picture %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % fonction : function that will create a picture according to its length
@@ -6,8 +6,8 @@ function [ pic_out ] = create_picture( X,Y,pix_size )
 %
 % %%%%%% usage %%%%%%
 % %% INPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  - X         : Length (horizontal dimension) of the picture in meters
-%  - Y         : Heigth (vertical dimension) of the picture in meters
+%  - length        : Length(horizontal dimension) of the picture in meters
+%  - heigth        : Heigth(vertical dimension) of the picture in meters
 %  - pix_size  : Pixel size in MILLIMETERS
 %
 % %% OUTPUTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,8 +17,8 @@ function [ pic_out ] = create_picture( X,Y,pix_size )
 % %% AUTEUR : Martin HOFMANN
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-M=round(X/pix_size*1e3);
-N=round(Y/pix_size*1e3);
+M=round(heigth/pix_size*1e3);
+N=round(length/pix_size*1e3);
 pic_out=ones(M,N); % Assigning ones gives a white picture
 
 end

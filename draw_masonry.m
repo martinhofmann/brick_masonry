@@ -22,13 +22,15 @@ function [ masonry_pic ] = draw_masonry(length_pic,heigth_pic,L,h,e,r,pix_size )
 % %% AUTEUR : Martin HOFMANN
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% We get the positions of the bricks with the function get_brick_positions
-
-[X_pos,Y_pos,n_bricks]=get_brick_positions(heigth_pic,length_pic,L,h,e);
 
 % Creation of the empty picture
 
 masonry_pic=create_picture(length_pic,heigth_pic,pix_size);
+
+% We get the positions of the bricks with the function get_brick_positions
+
+[X_pos,Y_pos,n_bricks]=get_brick_positions(size(masonry_pic),L,h,e,pix_size);
+
 
 % Creation of the brick image that will be repeated all over masonry_pic
 

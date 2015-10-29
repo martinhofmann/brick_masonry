@@ -85,17 +85,14 @@ image_brick(X2c+1:X3c-1,Y1c+1:Y4c-1)=0.5;
 % Creation of the right lower corner with cos and sin function
 
 round_in_square=ones(X4c-X3c+1,Y4c-Y3c+1);
-for i=0:pi/2/25:pi/2
+for i=0:pi/2/50:pi/2
     y=r*cos(i);
     x=r*sin(i);
     round_in_square(max(1,round(x/pix_size*1e3)),max(1,round(y/pix_size*1e3)))=0;
-    for j=0:r/25:r-pix_size/2/1e3
-        x=j*cos(i);
-        y=j*sin(i);
-        round_in_square(max(1,round(x/pix_size*1e3)),max(1,round(y/pix_size*1e3)))=0.5;
+    if round(y/pix_size*1e3) > 1
+        round_in_square(max(1,round(x/pix_size*1e3)),1:round(y/pix_size*1e3)-1)=0.5;
     end
 end
-
 % Right lower corner
 
 image_brick([X3c:X4c],[Y3c:Y4c])=round_in_square;

@@ -9,9 +9,13 @@ e=0.01;
 r=0.01;
 
 %% Picture parameters
-% Length of the picture (X dimension) in meters
-length_pic=1;
-% Height of the picutre (Y dimension) in meters
-height_pic=1;
+% Length of the picture (Y dimension) in meters
+length_pic=0.4;
+% height of the picutre (X dimension) in meters
+height_pic=0.4;
 % Size of the pixels in milimeters 
 pix_size=1;
+
+%% Save paramaters
+% File to the saved pictures
+chemin_save='X:\masonry_generated_pictures\test';
